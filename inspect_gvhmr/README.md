@@ -35,9 +35,9 @@ Play with the demo is always a good start point to understand most public codeba
 <summary>Before going to the next step, you can first try to answer these questions as a <b>self-check</b>:</summary>
 
 1. Try to trace the data flow in the pipeline, filling in this:
-   ![](./assets/pipeline_m.png)
+   <center><img src="./assets/pipeline_m.png" width="500"></center>
 2. What is SMPL?
-    - If you are still not familiar with SMPL, play with [this notebook](https://github.com/IsshikiHugh/LearningHumans/blob/main/notebooks/SMPL_basic.ipynb) to get a better understanding.
+    - If you are still not familiar with SMPL, play with <a href="https://github.com/IsshikiHugh/LearningHumans/blob/main/notebooks/SMPL_basic.ipynb" target="_blank">this notebook</a> to get a better understanding.
 
 </details>
 
