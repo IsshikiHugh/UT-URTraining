@@ -8,7 +8,8 @@ Check the videos in the [GVHMR Project Page](https://zju3dv.github.io/gvhmr/) an
 
 ## Tasks
 
-In this project, you are asked to run GVHMR on the H36M validation set, and quantitatively and qualitatively evaluate the results.
+In this project, you are asked to run GVHMR on a selected subset of H36M validation set, and quantitatively and qualitatively evaluate the results.
+We will provide the subset download link to you in Step 2.
 
 To achieve this, you should understand those components' implementations:
 
@@ -41,8 +42,8 @@ Play with the demo is always a good start point to understand most public codeba
     What is SMPL?<br>
     <ul>
       <li>
-        If you are still not familiar with SMPL, play with 
-        <a href="https://github.com/IsshikiHugh/LearningHumans/blob/main/notebooks/SMPL_basic.ipynb" target="_blank">this notebook</a> 
+        If you are still not familiar with SMPL, play with
+        <a href="https://github.com/IsshikiHugh/LearningHumans/blob/main/notebooks/SMPL_basic.ipynb" target="_blank">this notebook</a>
         to get a better understanding.
       </li>
     </ul>
@@ -55,6 +56,8 @@ Play with the demo is always a good start point to understand most public codeba
 For evaluating GVHMR on a new dataset, you need to 1) run GVHMR on the dataset, 2) compute the metrics over the results.
 In this section, we focus on the first part.
 
+#### Step 1.1: Know What Kind of Data You Need
+
 To run a open-source pipeline on a new dataset, you can either use the demo script or the evaluation script (if exists).
 Generally, demo script provides all the processes for running from solely in-the-wild inputs, but might be poorly batch-ready.
 While the evaluation script typically run batch inference over a pre-processed dataset, and typically is coupled with some evaluation metrics computation.
@@ -62,24 +65,29 @@ While the evaluation script typically run batch inference over a pre-processed d
 For GVHMR, either is available.
 Choose the best one you think is suitable for your task, and inspect the code to understand what's going on.
 
-Then, you should have an overview of what kind of data is needed for the evaluation. 
+Then, you should have an overview of what kind of data is needed for the evaluation.
 Making a list of that might be helpful.
 
+#### Step 1.2: Prepare the Dataset
+
+First, [download the subset here with UT Box](https://utexas.box.com/s/es8w2nnpjm68jd42pqqivdn37mmfjb0l).
+
 Then, you need to check the dataset structure and build the dataset processing pipeline.
-Here you are required to process the validation set of H36M dataset.
-The downloaded source is available at the cluster, ask the Professor for the details.
+It contains two main steps: 1) grab the necessary data from the source dataset, 2) preprocess the data into the format expected by the pipeline.
+We provide a well-organized subset for you, so it's relatively easier than general cases, but you still need to figure out the "ambiguous" naming of the keys in the source through visualization yourself.
+For the later part, you are encouraged to build an efficient processing pipeline since the real datasets are typically much larger.
 
 After solving both the code side issues and the dataset side issues, you should be able to run the pipeline over the dataset.
 
-### (Optional) Step 2.5: Test Time Augmentation
+### (Optional) Step 3: Test Time Augmentation
 
 There is a test time augmentation (TTA) used in GVHMR evaluation.
 The details are mentioned in the paper.
 Code is also available in the repository.
-It's compatible with the current inference pipeline. 
+It's compatible with the current inference pipeline.
 You first go through the **Step 3** and then come back to this section if you want.
 
-### Step 3: Evaluation and Visualization
+### Step 4: Evaluation and Visualization
 
 After (or maybe during) running the pipeline over the dataset, you would have the predicted results.
 They might be buggy (it's nice if there is no bug, but you need to verify it), and you want to debug.
